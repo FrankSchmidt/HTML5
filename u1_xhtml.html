@@ -3,12 +3,13 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Uebungsaufgabe XHTML</title>
+	<title>&Uuml;bungsaufgabe XHTML</title>
 	<meta name="generator" content="MacVim"/>
 	<meta name="author" content="Schmidt, Frank"/>
 	<meta name="keynote" content="Beuth, erste Websete"/>
 	<meta name="robots" content="index"/>
-	<meta name="date" content="yyyy-mm-ddthh:mm:ss+hh:mm"/><!--
+	<meta name="date" content="yyyy-mm-ddthh:mm:ss+hh:mm"/>
+<!--
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
 <script>
@@ -24,7 +25,7 @@ $(document).ready(function(){
 <body>
 	<div>
 	   <h2>
-	      <p>Uebungsaufgabe XHTML</p>
+	      <p>&Uuml;bungsaufgabe XHTML</p>
 	   </h2>
 	</div>
 	
@@ -35,50 +36,113 @@ $(document).ready(function(){
 	<p></p>
 
 	<div>
-		<p>Bitte bauen Sie diese Website ausschlielich in validem XHTML <b>genau ein zu eins</b> nach, also auch die Texte. Als Browser wurde FireFox genutzt. 
+		<p>Bitte bauen Sie diese Website ausschlie&szlig;lich in validem XHTML <b>genau ein zu eins</b> nach, also auch die Texte. Als Browser wurde FireFox genutzt. </p>
 	</div>
-	
+
 	<div>
-		<table border="0">
-		<tr>
-		<th align="left">Vorgehensweise</th>
-		<th align="left">Platzierung von Elementen nebeneinander</th>
+		<table border="0" cellspacing="20" cellpadding="5"> <!-- nicht in HTML5 cellspace, cellpadding(css) -->
+
+		<tr> <!-- Z0-S1,2... -->
+			<!-- Spaltenanzahl-Tabellenkopf (erste Zeile[Z] mit erster und zweiter Spalte[S]) -->
+			<th align="left"><h3>Vorgehensweise</h3></th>
+			<th align="left"><h3>Platzierung von Elementen nebeneinander</h3></th>
 		</tr>
-		<tr>
-		<td>
+		<tr> <!-- Z1 -->
+		<td> <!-- Z1-S1 -->
 			<div>
-			<p>1. Erstellen Sie ein valides HTML-Grundgeruest (XHTML trans).</p>
-			<p>2. Erzeugen Sie die einzelnen HTML-Elemente</p>
-			<p>	* Ueberschriften, z.B. &lt;<h1>, <h2>, <h3></p>
-			<p>	* Absaetze </p> --- unsortet und sortet listen
-			<p></p>
-			<p></p>
-			<p></p>
-			<p></p>
-			<p></p>
-			<p></p>
+			<ol>
+				<!-- Eine nummerierte Liste [ol] --> 
+				<li>Erstellen Sie ein valides HTML-Grundger&uuml;&szlig;st (XHTML trans).</li>
+				<li>Erzeugen Sie die einzelenen HTML-Elemente</li>
+				<ul>
+					<!-- Eine nicht nummerierte Liste [ul] -->
+					<!-- <p style="text-indent:1em;"></p> tab -->
+					<li>&Uuml;berschriften, z.B. &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;</li>
+					<li>Abs&auml;tze</li>
+					<li>Sortierte und Unsortierte Listen</li>
+					<li>usw.</li>
+
+				</ul>
+
+				<li>Wurden auch Formatierungen mit HTML erzeugt? Was ist dar&uuml;ber zu sagen?</li>
+				<li>Alle Tags, die Sie ben&ouml;tigen finden Sie in der HTML-Referenz in Moodle.</li>
+			</ol>
 			</div>
-			
-			
 		</td>
-		<td>
-						      			
-			<div align="center"><img src="file:///Users\bughunter\Code\Beuth\Web-Programmierung\HTML5\Beuth_Logo.png" width="400" hight="300" alt="" /></div>
+		<td> <!-- Z1-S2 -->
+			<div>
+				<p>Wie habe ich das gemacht? Diese Methode zwar nicht mehr zeitgem&auml;&szlig;, man sollte sie aber kennen.<br></br><i>Das Bild finden Sie auf der Startseite der Beuth Hochschule.</i></p>
+				<div align="left">
+					<a href="http://www.beuth-hochschule.de/" target="_blank">
+						<img src=".\Beuth_Logo.png" width="300" hight="200" alt="BeuthLogo"/>
+					</a>
+				</div>
+			</div>
 		</td>
 		</tr>
-		<tr>
-		<td>row 2, cell 1</td>
-		<td>row 2, cell 2</td>
+		<!--
+		<tr> Z2
+		<td>Z2, S1</td>
+		<td>Z2, S2</td>
 		</tr>
-		</table>	   </h3>
+		-->
+	</table>
 	</div>
+	<!-- !!!Knopf erzeugen!!! -->
+	<!--
+		<button type="button" onclick="loadXMLDoc()">Change Content</button>
+	-->
+	<!-- Trennlinie erzeugen -->
+	<hr noshade="noshade" />
+<!--  -->
+<p><h3>Kontaktformular</h3></p>
+		<form action="_self" method="GET">
+			<!-- -E-mail Formular- <formaction="mailto:fritz.eierschale@example.org" method="post" enctype="text/plain"> </form> -->
+			<table border="1" cellspacing="0" cellpadding="4">
+			<tr>
+				<td>Vorname</td>
+				<td><input name="vorname"></input></td>
+				<td>Nachname:</td>
+				<td><input name="nachname"></input></td>
+				<td rowspan="3" valign="bottom"><input type="submit" value="Abschicken"></input></td>
+			</tr>
+			<tr>
+				<td>E-Mail Adresse:</td>
+				<td><input name="email"></input></td>
+				<td>Telefon:</td>
+				<td><input name="telefon"></input></td>
+			</tr>
+			<tr>
+				<td>Ihre Nachricht:</td>
+				<td colspan="3">
+					<textarea name="nachricht" cols="66" rows="5">Bitte geben Sie Ihre Nachricht ein</textarea>
+				</td>
+			</tr>
+			</table>
+		</form>
+<!--
+<header>
+        <hgroup>
+            <h1>HTML5 Markup</h1>
+        </hgroup>
+    </header>
+    <nav>
+        <ul>
+            <A href="./S1.html" target="_blank">-> Seite 1</A><BR> 
+            <A href="./S2.html" target="_blank">-> Seite 2</A><BR>
+            <A href="./S3.html" target="_blank">-> Seite 3</A><BR>
+        </ul>
+    </nav>
+    <section>
+        <figure>
+            <img width="180" height="180" 
+                 src="./image/g_s1.jpg"
+                 alt="pct1" />
+            <figcaption>Grand Theft Auto V</figcaption>
+        </figure>
+    </section>
+    <footer>Web-Programmierung 2013 by Frank, Schmidt</footer>
+-->
 
-
-
-	<button type="button" onclick="loadXMLDoc()">Change Content</button>	-- Knopf erzeugen
-
-	<hr noshade="noshade" />	-- Trennlinie erzeugen
 </body>
-
 </html>
-
