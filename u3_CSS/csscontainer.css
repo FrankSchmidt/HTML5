@@ -1,0 +1,89 @@
+body {
+    color: black; background-color: white;
+    font-size: 100%;
+    font-family: Helvetica,Arial,sans-serif;
+    margin: 0; padding: 1em;
+    min-width: 40em; /* Mindestbreite verhindert Umbruch und Anzeigefehler in modernen Browsern */
+	width: 960px;
+}
+
+div#Header {
+	float: left; width: 960px; height: 120px;
+	padding: 5px;
+    border: 1px dashed silver; background-color: #eee;
+}
+
+div#Header form {
+	text-align: right;
+	margin-right: 10px;
+	margin-top: 50px;
+}
+
+div#Header h1 {
+	text-align: center;
+	margin-right: 10px;
+	margin-top: 30px;
+	color: #972828;
+	font-family: "comic sans ms";
+}
+
+div#Header img {
+	float: left;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+ul#Navigation {
+    font-size: 0.83em;
+    float: left; width: 200px;
+	height: 600px;
+	padding: 5px;
+    border: 1px dashed silver; background-color: #eee;
+  }
+ 
+ul#Navigation li {
+    list-style: none;
+    margin: 0; padding: 0.5em;
+} 
+div#teaser {
+    font-size: 0.83em;
+    float: left; width: 200px; height: 600px;
+    margin: 5px; padding: 5px;
+    border: 1px dashed silver; background-color: #eee;
+}
+
+
+div.teaser_container {
+	color: white;
+	padding: 10px;
+	margin: 5px;
+	border: solid white 1px;
+	background-color: #999;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 10px
+}
+
+div.teaser_container a {
+	color: blue;
+}
+
+
+div#Inhalt {
+	float: left; width: 500px; height: 600px;
+    margin: 5px; padding: 5px;
+    border: 1px dashed silver;
+}
+
+div#Footer {
+	float: left; width: 960px; height: 80px;
+    padding: 5px;
+    border: 1px dashed silver; background-color: #eee;
+}
+
+.klein{
+	font-size: 10px;
+
+}

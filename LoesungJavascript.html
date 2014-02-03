@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<title>test</title>
+
+<style type="text/css">
+<!--
+
+body 
+{
+	font-family: Arial;
+    background-color:#B8C4D0;
+}
+
+a:link       { font-size:16px; color:#525563; text-decoration:none; font-weight:bold; }
+a:link:hover { font-size:16px; color:black;   text-decoration:none; font-weight:bold; }
+
+.pagewrapper { width:100%; height:800px;  }
+
+.header      {  width:110%; height:100px; background-color:#5183A8;  position:relative; left:-8px; top:-8px; padding-left:10px; padding-top:10px; }
+.hsep        {  width:110%; height:17px; background-image:url('header_bar.png'); background-repeat:repeat-x; position:relative; left:-28px; top:-8px;}
+
+.mid         { width:100%; height:80%; float:left;  position:relative; top:-8px;}
+.navi        { width:10%; height:100%; float:left; }
+.content     { width:90%; height:100%; float:right; background-color:#EFEFEF; position:relative; right:-8px; }
+.form1       { border:0px; padding:25px; }
+
+.footer      { width:100%; height:15%;  text-align:center;}
+
+-->
+</style>
+
+</head>
+<body>
+
+<script type="text/javascript">
+<!--
+function validateEmail(email) { 
+    var re = /[^@]+@[^.]+\..+/;
+    return re.test(email);
+} 
+
+function testempty(elem)
+{
+	if (elem.value == "")
+	{
+		elem.value = "Bitte ausfüllen!";
+		elem.style.color = "#FF0000";
+		elem.style.border = "1px solid red";			
+	}
+	if (elem.name == "email")
+	{
+		if(!(validateEmail(elem.value)))
+		{
+			elem.style.color = "#FF0000";
+			elem.style.border = "1px solid red";					
+			elem.value = "Bitte E-Mail-Adresse ueberpruefen."
+		}		
+	}		
+}
+
+function testerror(elem)
+{
+	if (elem.value == "Bitte ausfüllen!")
+	{
+
+		elem.value = "";
+		elem.style.color = "#000000";
+		elem.style.border = "0px";
+	}
+}
+-->
+</script>
+
+
+<div class="pagewrapper">
+
+
+<div class="header">
+<img src="http://www.goldene-krone-goslar.de/Krone.png" alt="logo" /><br /> &nbsp;&nbsp;Firma
+</div>
+
+<div class="hsep">
+</div>
+
+<div class="mid">
+
+<div class="navi">
+<br />
+<a href="">Home</a><br />
+<br />
+<a href="">Kontakt</a>
+</div>
+
+<div class="content">
+
+<form action="#" name="form1">
+<h3 style="text-align:center;">Kontakt</h3>
+
+<table class="form1">
+
+<tr>
+<td>Vorname:</td><td><input type="text" name="prename" onclick="testerror(this)" onblur="testempty(this);" /></td>
+</tr>
+<tr>
+
+<td>Nachname:</td><td><input type="text" name="name" onclick="testerror(this)" onblur="testempty(this);" /></td>
+</tr>
+
+<tr>
+<td>E-Mail:</td><td><input type="text" name="email" onclick="testerror(this)" onblur="testempty(this);" /></td>
+</tr>
+
+<tr>
+<td>Nachricht:</td><td><textarea rows="5" cols="35" onclick="testerror(this)" onblur="testempty(this);"></textarea></td>
+</tr>
+
+<tr>
+<td><input type="submit" value="Absenden" /></td><td></td>
+</tr>
+
+</table>
+</form>
+</div>
+
+</div>
+
+
+<div class="footer">
+&nbsp;
+<p>
+Fu&szlig;leiste (c) 2014
+</p>
+</div>
+
+
+</div>
+
+</body>
+</html>

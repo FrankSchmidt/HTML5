@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- <?xml version="1.0" encoding="iso-8859-1"?> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Übung 3; Web-Programmierung; WS1314	-->
+	
+<head>
+
+<title>&Uuml;bungsaufgabe Javascript</title>
+<style type="text/css">
+body {
+	color: black;
+	background-color: white;
+	font-size: 100%;
+	font-family: Helvetica,Arial,sans-serif;
+	margin: 0;
+	padding: 1em;
+	min-width: 40em; /* Mindestbreite verhindert Umbruch und Anzeigefehler in modernen Browsern */
+	width: 960px;
+}
+
+div#Header {
+	float: left;
+	width: 960px;
+	height: 120px;
+	padding: 5px;
+	border: 1px dashed silver;
+	background-color: #eee;
+}
+
+div#Header form {
+	text-align: right;
+	margin-right: 10px;
+	margin-top: 50px;
+}
+
+div#Header h1 {
+	text-align: center;
+	margin-right: 10px;
+	margin-top: 30px;
+	color: #972828;
+	font-family: "comic sans ms";
+}
+
+div#Header img {
+	float: left;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+ul#Navigation {
+	font-size: 0.83em;
+	float: left;
+	width: 200px;
+	height: 600px;
+	padding: 5px;
+	border: 1px dashed silver; 
+	background-color: #eee;
+}
+ 
+ul#Navigation li {
+	list-style: none;
+	margin: 0; 
+	padding: 0.5em;
+}
+
+div#teaser {
+	font-size: 0.83em;
+	float: left;
+	width: 200px;
+	height: 600px;
+	margin: 5px;
+	padding: 5px;
+	border: 1px dashed silver;
+	background-color: #eee;
+}
+
+div.teaser_container {
+	color: white;
+	padding: 10px;
+	margin: 5px;
+	border: solid white 1px;
+	background-color: #999;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 10px
+}
+
+div.teaser_container a {
+	color: blue;
+}
+
+div#Inhalt {
+	float: left;
+	width: 500px;
+	height: 600px;
+	margin: 5px;
+	padding: 5px;
+	border: 1px dashed silver;
+}
+
+div#Footer {
+	float: left;
+	width: 960px;
+	height: 80px;
+	padding: 5px;
+	border: 1px dashed silver;
+	background-color: #eee;
+}
+
+div.klein{
+	font-size: 10px;
+}	
+</style>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+		<!-- Javascript - Begin -->
+	<script type="text/javascript">
+		
+		function validateEmail(email) { 
+   			var re = /[^@]+@[^.]+\..+/;
+ 			return re.test(email);
+		} 
+		
+		function hinweis(obj){
+			if (obj.value == "") {
+				obj.style.color = 'red'; 
+				obj.value = "Bitte ausfüllen!";
+			}
+			if (obj.value == "Bitte ausfüllen!") {
+				obj.style.color = 'red';
+			}
+			else {
+				obj.style.color = 'blue';
+			}
+		}
+
+		
+		function chkFormular () {
+			if (document.Formular.vorname.value == "") {
+				alert("Bitte Ihren Vornamen eingeben!");
+				document.Formular.vorname.focus();
+				return false;
+			}
+			if (document.Formular.nachname.value == "") {
+				alert("Bitte Ihren Nachnamen eingeben!");
+				document.Formular.nachname.focus();
+				return false;
+			}
+			if (document.Formular.mail.value == "") {
+				alert("Bitte Ihre Email eingeben!");
+				document.Formular.mail.focus();
+				return false;
+			}
+			if (document.Formular.mail.value.indexOf("@") == -1 || document.Formular.mail.value.indexOf(".") == -1){
+				alert("Keine E-Mail-Adresse!");
+				document.Formular.Mail.focus();
+				return false;
+			}
+		}	
+		function testerror(elem){
+			if (elem.value == "Bitte ausfüllen!"){
+
+				elem.value = "";
+			elem.style.color = "#000000";
+			elem.style.border = "0px";
+			}		
+		}
+
+		function testempty(elem){
+			if (elem.value == "")	{
+				elem.value = "Bitte ausfüllen!";
+				elem.style.color = "#FF0000";
+				elem.style.border = "1px solid red";			
+			}
+			if (elem.name == "email"){
+				if(!(validateEmail(elem.value))){
+					elem.style.color = "#FF0000";
+					elem.style.border = "1px solid red";					
+					elem.value = "Bitte E-Mail-Adresse ueberpruefen."
+				}		
+			}		
+		}
+
+
+	</script>
+		<!-- Javascript - End -->	
+</head>
+
+<body>
+
+		<!-- Header - Begin -->
+	<div id="Header">
+
+		<h1>Web-Programmierung</h1>
+		<img src=".\u3_IMAGE\TET_Wappen.PNG" width="100" height="100" alt="Teterow"/>
+
+	</div>
+		<!-- Header - End -->
+
+		<!-- Navigation Columm - Begin -->
+	<ul id="Navigation">
+		<li><a href="u3_javascript.html">Home</a></li>
+		<li><a href="http://de.selfhtml.org/css/layouts/einfuehrung.htm">Einführung in CSS-basierte Layouts</a></li>
+		<li><a href="http://de.selfhtml.org/css/layouts/mehrspaltige.htm#top">Mehrspaltige CSS-basierte Layouts</a></li>
+		<li><a href="http://de.selfhtml.org/css/layouts/fixbereiche.htm">Fixe Bereiche mit CSS-basierten Layouts</a></li>
+	</ul>
+		<!-- Navigation Columm - End -->
+
+		<!-- Content - Begin -->
+	<div id="Inhalt">
+
+		<h1 style="font-family:comic sans ms, Garamond, Georgia, serif;color:#4D4A4A;" align="center">Kontaktformular</h1>
+		
+		<form name="Formular" action="http://de.selfhtml.org/cgi-bin/formview.pl" method="post" onsubmit="return chkFormular()">
+			<p>Vorname<span style="color:#E90505">*</span>:<br/>
+				<input name="vorname" type="text" size="30" maxlength="30" onclick="this.style.fontStyle='normal';this.style.color = 'black';" onblur="hinweis(this);this.style.fontStyle='italic';"/></p>
+			<p>Nachname<span style="color:#E90505">*</span>:<br/>
+				<input name="nachname" type="text" size="30" maxlength="30" onclick="this.style.fontStyle='normal';this.style.color = 'black';" onblur="hinweis(this);this.style.fontStyle='italic';"/></p>
+
+			
+			<p>Email<span style="color:#E90505">*</span>:<br/><input type="text" name="email" onclick="testerror(this)" onblur="testempty(this);" /></td>
+			
+	<!--	
+			<p>Email<span style="color:#E90505">*</span>:<br/>
+				<input name="mail" type="text" size="30" maxlength="40" onclick="this.style.fontStyle='normal';this.style.color = 'black';" onblur="hinweis(this);this.style.fontStyle='italic';"/></p>	 -->
+		<p>Nachricht<span style="color:#E90505">*</span>:<br/>
+				<textarea name="nachricht" cols="50" rows="10" onclick="this.style.fontStyle='normal';this.style.color = 'black';" onblur="hinweis(this);this.style.fontStyle='italic';"></textarea></p>
+			<p align="center"><input type="submit" name="send" value="Senden"/></p>
+		</form>
+	</div>
+		<!-- Content - End -->
+
+		<!-- Teaser Columm right - Begin -->
+	<div id="teaser">
+			<!-- Teaser Container right - Begin -->
+		<div class="teaser_container">
+			<strong>New</strong>
+			<p>Auch wenn diese Info- Box am Bildschirm als letzte angezeigt wird, ist sie
+		   	im Quelltext vor dem im Fluss belassenem Inhaltsbereich zu notieren.</p>
+		</div>
+			<!-- Teaser Container right - End -->
+		
+			<!-- Teaser Container right - Begin -->
+		<div class="teaser_container">
+			<strong>New</strong>
+			<p>Dadurch, dass für den Inhaltsbereich kein float definiert ist, kann auf
+		   	die Angabe einer Breite verzichtet werden und die Seite den ihr zur
+		   	Verfügung stehenden Raum ausnutzen.</p>
+		</div>
+			<!-- Teaser Container right - End -->
+		
+			<!-- Teaser Container right - Begin -->
+		<div class="teaser_container"> <!-- div.teaser_container  -->
+			<strong>New</strong>
+			<p>Diese Methode, ein Element im Fluss zu belassen und dadurch auf eine
+		   	Breitenangabe verzichten zu können, hat außerdem den Vorteil, Abweichungen
+		   	durch das falsche Box-Modell des Internet Explorer auszugleichen. <a href="http://de.selfhtml.org/css/layouts/anzeige/3spaltig.htm" target="_blank">... mehr</a></p>
+		</div>
+			<!-- Teaser Container right - End -->		
+	</div>
+		<!-- Teaser Columm right - End -->
+
+	<div id="Footer"> <!-- div#Footer {} -->
+		<div align="center">
+			<!-- Do not remove this copyright notice -->
+		<br/>
+		Powered by TeterowDude&reg; (Deutsch)
+		<br/>
+			<!-- Do not remove this copyright notice -->
+		</div>
+	</div>
+
+</body>
+
+
+</html>
